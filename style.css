@@ -24,6 +24,12 @@ body {
   color: #fafafa;
 }
 
+main {
+  max-width: 1200px; /* Define a largura máxima */
+  margin: 0 auto; /* Centraliza o conteúdo */
+  padding: 0 20px; /* Adiciona um pouco de padding para evitar que o conteúdo encoste nas bordas */
+}
+
 .home {
   font-family: "Bricolage Grotesque";
   color: #fafafa;
@@ -93,33 +99,23 @@ nav a:hover {
   text-underline-offset: 16px;
 }
 
-.Franciele-text {
-  width: 660px;
-  height: 204px;
-}
-
 h1 {
-  max-width: 660px;
   line-height: 1;
   font-family: "Grifter", sans-serif;
   font-size: 8rem;
   font-weight: 900;
 }
 
-.hero {
+section .hero {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  background: #09090b;
-  margin: auto;
+  justify-content: space-between;
+  margin: 0 auto;
 }
 
 .profile-photo {
-  width: 330px;
-  height: 330px;
-  border-radius: 50%;
-  margin: 0 auto;
+  width: 330px; /* Ajuste o tamanho conforme necessário */
+  height: auto;
 }
 
 section h2 {
@@ -153,13 +149,17 @@ section h2 {
 }
 
 .aboutmelink {
+  text-decoration: none;
+  text-underline-offset: 16px;
+}
+
+.aboutmelink:hover {
   color: #fafafa;
   text-decoration: underline;
   text-underline-offset: 16px;
 }
 
-.aboutmelink:hover {
-  color: #8fff00;
+.aboutmelink .current {
   text-decoration: underline;
   text-underline-offset: 16px;
 }
@@ -170,26 +170,153 @@ nav a:hover {
   text-underline-offset: 16px;
 }
 
+.portifolio {
+  color: #8fff00;
+  text-decoration: none;
+  text-underline-offset: 16px;
+}
+
+.portifolio .current {
+  text-decoration: underline;
+  text-underline-offset: 16px;
+}
+
+.portifolio:hover {
+  text-decoration: underline;
+}
+
+.current {
+  text-decoration: underline;
+  text-underline-offset: 16px;
+}
+
+nav a:hover {
+  color: #8fff00;
+}
+
+
 .hero-aboutme {
+  flex: 1;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column; /* Alinha os filhos verticalmente */
   justify-content: center;
-  margin: 200 px auto;
+  align-items: flex-end; /* Alinha os filhos à direita */
+
+  margin: 4rem 0 0 380px;
 }
 
 .arrow-aboutme {
-  margin-top: 100px;
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
   width: 63px;
   height: 63px;
-  margin-left: 182px;
+
+  margin-left: 190px;
+  margin-top: 8rem;
 }
 
 .aboutmeh1 {
-  margin: 6rem 0 0  400px;
+  max-width: 960px;
+  margin: 1rem 0;
+
   font-family: "Bricolage Grotesque", sans-serif;
   font-size: 2rem;
   line-height: 1;
   font-weight: 400;
   letter-spacing: 0.1em;
 }
+
+span {
+  color: #71717a;
+  font-weight: bold;
+}
+
+// PORTIFOLIO PAGE
+
+.hero-portifolio {
+  margin: 0;
+}
+/* .h2-portifolio h2 {
+  color: #fafafa;
+  font-family: "Bricolage Grotesque";
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 1rem auto;
+} */
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Cria duas colunas de largura igual */
+  gap: 2rem; /* Espaçamento entre os cards */
+  justify-items: center; /* Centraliza os cards horizontalmente */
+}
+
+/* .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 540px;
+  height: 340px;
+  //background: #8fff00;
+  color: #fafafa;
+  border: 1px solid #8fff00;
+  border-radius: 24px;
+} */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  //padding: 20px;
+  width: 540px;
+  height: auto;
+  //background: #8fff00;
+  color: #fafafa;
+  font-size: 1rem;
+  border: 1px solid rgba(113, 113, 122, 0.19);
+  //border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Garante que o conteúdo não ultrapasse os limites do card */
+
+}
+
+
+.card img {
+  width: 100%; /* Ajusta a largura da imagem para 100% do card */
+  height: 100%; /* Mantém a proporção da imagem */
+  object-fit: cover; /* Garante que a imagem cubra todo o espaço do card */
+}
+
+.card p {
+  margin: 1rem 0 1rem 1rem ;
+  font-weight: bold;
+  font-size: 1.4rem;
+  text-align: left; /* Alinha o texto à esquerda */
+  width: 100%; /* Garante que o texto ocupe toda a largura do card */
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Cria duas colunas de largura igual */
+  gap: 2rem; /* Espaçamento entre os cards */
+  justify-items: center; /* Centraliza os cards horizontalmente */
+  margin-bottom: 4rem; /* Adiciona uma margem inferior de 2rem ao final da seção */
+}
+
+h3 {
+  color: #fafafa;
+  font-family: "Bricolage Grotesque";
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 2rem auto;
+}
+
+
+// VERSAO MOBILE
