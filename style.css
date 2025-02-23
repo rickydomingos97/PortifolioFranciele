@@ -1,4 +1,6 @@
 * {
+  padding: 0;
+  box-sizing: border-box;
 }
 
 @font-face {
@@ -10,9 +12,11 @@
 
 html {
   background: #09090b;
+  scroll-behavior: smooth;
 }
 
 body {
+  scroll-behavior: smooth;
   max-width: 1200px;
   display: flex;
   flex-direction: column;
@@ -194,7 +198,6 @@ nav a:hover {
   color: #8fff00;
 }
 
-
 .hero-aboutme {
   flex: 1;
   display: flex;
@@ -237,19 +240,17 @@ span {
 .hero-portifolio {
   margin: 0;
 }
-/* .h2-portifolio h2 {
-  color: #fafafa;
-  font-family: "Bricolage Grotesque";
-  font-size: 2rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  margin: 1rem auto;
-} */
+
+h3 {
+  font-size: 1rem;
+}
 
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Cria duas colunas de largura igual */
+  grid-template-columns: repeat(
+    2,
+    1fr
+  ); /* Cria duas colunas de largura igual */
   gap: 2rem; /* Espaçamento entre os cards */
   justify-items: center; /* Centraliza os cards horizontalmente */
 }
@@ -268,9 +269,10 @@ span {
 } */
 
 .card {
+  margin-top: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   //padding: 20px;
   width: 540px;
@@ -282,27 +284,40 @@ span {
   //border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden; /* Garante que o conteúdo não ultrapasse os limites do card */
-
 }
 
+.card:hover {
+  border: 1px solid #8fff00;
+  background:rgb(8, 24, 11);
+  transition: 0.3s;
+  cursor: pointer;
+}
 
 .card img {
-  width: 100%; /* Ajusta a largura da imagem para 100% do card */
-  height: 100%; /* Mantém a proporção da imagem */
+  width: 100%; /* Define a largura fixa da imagem */
+  height: 403px; /* Define a altura fixa da imagem */
   object-fit: cover; /* Garante que a imagem cubra todo o espaço do card */
+  object-position: top; /* Centraliza a imagem no card */
 }
 
 .card p {
-  margin: 1rem 0 1rem 1rem ;
-  font-weight: bold;
-  font-size: 1.4rem;
+  padding: 0 2rem;
+  font-weight: 300;
+  font-size: 1.2rem;
   text-align: left; /* Alinha o texto à esquerda */
   width: 100%; /* Garante que o texto ocupe toda a largura do card */
+  /* display: -webkit-box;
+  -webkit-line-clamp: 3; /* Define o número de linhas */
+  /* -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis; Adiciona "..." ao final do texto */ */
+
 }
 
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Cria duas colunas de largura igual */
+  grid-template-columns: repeat(2, 1fr
+  ); /* Cria duas colunas de largura igual */
   gap: 2rem; /* Espaçamento entre os cards */
   justify-items: center; /* Centraliza os cards horizontalmente */
   margin-bottom: 4rem; /* Adiciona uma margem inferior de 2rem ao final da seção */
@@ -318,5 +333,49 @@ h3 {
   margin: 2rem auto;
 }
 
+/* LINHAS DO FOOTER A ADICIONAR */
 
-// VERSAO MOBILE
+footer {
+  margin-top: 8rem; /* Adiciona uma margem superior de 4rem ao rodapé */
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Centraliza os itens verticalmente */
+  height: 10rem; /* Define a altura do rodapé */;
+  border-top: 1px solid #71717A;
+  padding: 0;
+  background: #09090b;
+  color: #fafafa;
+  font-weight: 800;
+}
+
+.footer-item-name {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Centraliza os itens verticalmente */
+
+}
+
+.footer-item-name p {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+.footer-item {
+  gap: 2rem;
+  display: flex;
+  align-items: center; /* Centraliza os itens verticalmente */
+}
+
+.footer-item-name .heart {
+  margin-left: 5px;
+}
+
+.footer-item a img {
+  width: 44px; /* Define a largura da imagem */
+  height: auto; /* Ajusta a altura da imagem */
+  vertical-align: middle; /* Alinha a imagem verticalmente ao meio do texto */
+  margin-left: 5px; /* Adiciona um pequeno espaçamento à esquerda da imagem */
+  transition: fill 0.3s; /* Adiciona uma transição suave para a mudança de cor */
+}
